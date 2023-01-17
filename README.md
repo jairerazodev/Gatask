@@ -1,6 +1,6 @@
 # Gatask
 :cat: Felina aplicación web utilizando FastAPI y Redis, gestiona tareas, subtareas y listas.
-
+`
   # Instalar FastAPI y Redis
 
   !pip install fastapi redis
@@ -228,5 +228,5 @@
   db.delete(db_list)
   db.commit()
   return {"msg": "List deleted"}
-
+`
 Es importante notar que este ejemplo es solo una sugerencia y puede requerir adaptaciones para trabajar con su proyecto específico. Además, algunos de los métodos como `get_db` y `update_data` deben ser implementados adicionalmente. El uso de Redis en lugar de SQLAlchemy debería ser similar, pero con cambios en el código para acceder a la base de datos y realizar operaciones en ella. Se recomienda revisar la documentación de Redis y las librerías relacion
