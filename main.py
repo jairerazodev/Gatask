@@ -1,6 +1,5 @@
 
    # Importar las librerías en el script
-
     from fastapi import FastAPI, HTTPException
     from fastapi.responses import JSONResponse
     from fastapi.encoders import jsonable_encoder
@@ -13,7 +12,6 @@
     r = redis.Redis(host='localhost', port=6379, db=0)
 
     # También podemos crear una función para inicializar la conexión con la base de datos y otra para cerrarla:
-
     def connect_to_db():
         r = redis.Redis(host='localhost', port=6379, db=0)
         return r
@@ -24,7 +22,6 @@
     # Ahora podemos utilizar estas funciones para conectarnos a la base de datos antes de realizar cualquier operación CRUD y cerrar la conexión después de terminar.
 
     # Crear los modelos de datos para las tareas y las listas, con las propiedades y validaciones necesarias:
-
     class Task(BaseModel):
         id: int
         name: str
@@ -49,7 +46,6 @@
         pass
 
     # Crear las rutas y funciones de manejo de peticiones para las tareas y las listas, utilizando las funciones de CRUD de Redis para manipular los datos en la base de datos:
-
     @app.get("/tasks")
     def read_tasks():
         tasks = r.hgetall('tasks')
